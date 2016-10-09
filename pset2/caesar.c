@@ -11,11 +11,9 @@ int main(int argc, string argv[]){
     }
     int key = atoi(argv[1]);
     if (key < 0) {
-        printf("Error! Your wrote 0 or negative key");
         return 1;
     }
     else {
-        printf("plaintext: ");
         string inputText = GetString();
         for (int i = 0, j = strlen(inputText); i < j;i++) {
             if (isalpha(inputText[i])) {
@@ -27,7 +25,7 @@ int main(int argc, string argv[]){
                 }
             }
             else {
-                printf("%c ciphertext: ", inputText[i]);
+                printf("%c", inputText[i]);
             }
         }
         printf ("\n");

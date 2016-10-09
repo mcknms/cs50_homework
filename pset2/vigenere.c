@@ -9,7 +9,7 @@ int main(int argc, string argv[]) {
         printf ("Error!\n");
         return 1;
     }
-    
+
     string key = (argv[1]);
     for (int i = 0, j = strlen(key); i < j; i++) {
         if (!isalpha(key[i])) {
@@ -17,7 +17,6 @@ int main(int argc, string argv[]) {
             return 1;
         }
     }
-    printf ("Ciphertext: ");
     string inputText = GetString();
      for (int i = 0, k = strlen(inputText), j = 0; i < k; i++)
     {
@@ -25,37 +24,37 @@ int main(int argc, string argv[]) {
         {
             if (islower(key[j]))
             {
-                if (islower(inputText[i])) 
+                if (islower(inputText[i]))
                 {
-                    printf("%c", ((inputText[i] - 'a') 
+                    printf("%c", ((inputText[i] - 'a')
                         + key[j] % 97) % 26 + 'a');
                 }
                 if (isupper(inputText[i]))
                 {
-                    printf("%c", ((inputText[i] - 'A') 
-                        + key[j] % 97) % 26 + 'A');             
+                    printf("%c", ((inputText[i] - 'A')
+                        + key[j] % 97) % 26 + 'A');
                 }
             }
             if (isupper(key[j]))
             {
-                if (islower(inputText[i])) 
-                {    
-                    printf("%c", ((inputText[i] - 'a') 
+                if (islower(inputText[i]))
+                {
+                    printf("%c", ((inputText[i] - 'a')
                         + key[j] % 65) % 26 + 'a');
                 }
                 if (isupper(inputText[i]))
                 {
-                    printf("%c", ((inputText[i] - 'A') 
-                        + key[j] % 65) % 26 + 'A');             
+                    printf("%c", ((inputText[i] - 'A')
+                        + key[j] % 65) % 26 + 'A');
                 }
             }
             j = ((j + 1) % strlen(key));
         }
         else
         {
-            printf("%c Plaintext: ", inputText[i]);
+            printf("%c", inputText[i]);
         }
-    }   
+    }
     printf("\n");
 return 0;
 }
