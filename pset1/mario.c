@@ -1,10 +1,13 @@
 #include <stdio.h>
+#include <cs50.h>
+
 int main(void)
 {
 	int p_height = 0;
+
 	do {
 		printf("Height:");
-		scanf("%d", &p_height);
+		p_height = GetInt();
         if (p_height == 0)
         {
             return 0;
